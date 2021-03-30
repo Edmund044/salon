@@ -91,5 +91,64 @@ public class database {
            echo "Not successful";
         }
      }
+     public function login_admin($sql){
+      //$sql="SELECT * FROM myusers WHERE EMAIL='$email' AND PASSWORD='$pass'";
+      session_start();
+      $result=$this->connection->query($sql);
+      $number = $result->num_rows;
+      $rows = $result->fetch_assoc();
+        if ($number == 1) {
+          $_SESSION["id"] =$rows['student_id'];
+          $_SESSION["email"] =$rows['email'];
+          $_SESSION["login_name"] = $rows['login_name'];
+          $_SESSION["picture"] = $rows['picture'];
+          $this->user =  $rows['login_name'];
+          $this->email =  $rows['email'];
+          $this->picture = $rows['picture'];
+      
+          setcookie ("id", $_SESSION["id"],time()+ (10 * 365 * 24 * 60 * 60));
+          setcookie ("login_name", $_SESSION["login_name"],time()+ (10 * 365 * 24 * 60 * 60));
+          setcookie ("email", $_SESSION["email"], time() + (365*24*60*60*10));
+          setcookie ("picture", $_SESSION["picture"], time() + (365*24*60*60*10));
+         
+          header("location:elearning.php");
+        
+      
+  }else{
+      header("location:student_login_error.php");
+    
+      
+  } 
+  }
+  public function ifLoggedIn(){
+   
+   if(!isset($_COOKIE["login_name"])){
+    header("location:student_login.php");
+}
+if(!isset($_COOKIE["id"])){
+    header("location:student_login.php");
+}
+
+}
+public function mail($email){
+   // the message
+   $sql = "SELECT * FROM students WHERE email = '".$email."'";
+$students = $this->read_students($sql);
+for($i=0;$i<sizeof($students);$i++){
+   $msg =$students[$i]["email"];
+}
+
+// send email
+mail($email,"CBiT Elearning Forgot Password",$msg);
+}
+public function security($var){
+          
+   trim($var);
+   addslashes($var);
+   stripslashes($var);
+   htmlspecialchars($var);
+
+   return $var;
+}
 }
 ?>
