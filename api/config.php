@@ -1,12 +1,12 @@
-<? 
-public class database {
-    private $host = '';
-    private $username = '';
+<?php 
+class Database {
+    private $host = 'localhost';
+    private $username = 'root';
     private $password = '';
-    private $database = '';
+    private $database = 'salon';
     public $connection = '';
 
-    public function __construct {
+    public function __construct() {
         if(!$this->connection){
             $this->connection = new mysqli($this->host,$this->username,$this->password,$this->database);
           }
@@ -50,7 +50,8 @@ public class database {
                 $salon[$i]["Location"] = $rows["Location"];
                 $salon[$i]["Service"] = $rows["Service"];
                 $salon[$i]["Specialist"] = $rows["Specialist"];
-                $salon[$i]["date"] = $rows["date"];                
+                $salon[$i]["date"] = $rows["date"];  
+                $i++;              
             }
            
         }
@@ -67,14 +68,37 @@ public class database {
                 $salon[$i]["services_id"] = $rows["services_id"];
                 $salon[$i]["service_name"] = $rows["service_name"];
                 $salon[$i]["service_type"] = $rows["service_type"];
-                              
+                $salon[$i]["price"] = $rows["price"]; 
+                $salon[$i]["image"] = $rows["image"];    
+                $i++;           
             }
+            return $salon;
            
         }
         else{
            echo "Not successful";
         }
      }
+     public function read_wishlist($sql){
+      $result = $this->connection->query($sql);
+      $salon = array();
+      $i = 0;
+      if($result){
+          while($rows=$result->fetch_assoc()){
+              $salon[$i]["wishlist_id"] = $rows["wishlist_id"];
+              $salon[$i]["wishlist_name"] = $rows["wishlist_name"];
+              $salon[$i]["wishlist_type"] = $rows["wishlist_type"];
+              $salon[$i]["price"] = $rows["price"]; 
+              $salon[$i]["image"] = $rows["image"];    
+              $i++;           
+          }
+          return $salon;
+         
+      }
+      else{
+         echo "Not successful";
+      }
+   }
      public function read_specialist($sql){
         $result = $this->connection->query($sql);
         $salon = array();
@@ -83,7 +107,8 @@ public class database {
             while($rows=$result->fetch_assoc()){
                 $salon[$i]["specialist_id"] = $rows["specialist_id"];
                 $salon[$i]["Specialist_name"] = $rows["Specialist_name"];
-                $salon[$i]["Specialist_Service"] = $rows["Specialist_Service"];                             
+                $salon[$i]["Specialist_Service"] = $rows["Specialist_Service"]; 
+                $i++;                            
             }
            
         }
@@ -130,7 +155,7 @@ if(!isset($_COOKIE["id"])){
 }
 
 }
-public function mail($email){
+/*public function mail($email){
    // the message
    $sql = "SELECT * FROM students WHERE email = '".$email."'";
 $students = $this->read_students($sql);
@@ -140,7 +165,7 @@ for($i=0;$i<sizeof($students);$i++){
 
 // send email
 mail($email,"CBiT Elearning Forgot Password",$msg);
-}
+}*/
 public function security($var){
           
    trim($var);
@@ -151,4 +176,5 @@ public function security($var){
    return $var;
 }
 }
+
 ?>

@@ -10,13 +10,13 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="la.jpg" alt="Los Angeles">
+      <img src="./assets/images/blacks-in-the-labor-force_cover.jpg" alt="Los Angeles"  style="width:100%;height:40rem;object-fit:cover;">
     </div>
     <div class="carousel-item">
-      <img src="chicago.jpg" alt="Chicago">
+      <img src="./assets/images/blacks-in-the-labor-force_cover.jpg" alt="Chicago"  style="width:100%;height:40rem;object-fit:cover;">
     </div>
     <div class="carousel-item">
-      <img src="ny.jpg" alt="New York">
+      <img src="./assets/images/blacks-in-the-labor-force_cover.jpg" alt="New York"  style="width:100%;height:40rem;object-fit:cover;">
     </div>
   </div>
 
@@ -29,53 +29,33 @@
   </a>
 
 </div>
+<br>
+<br>
 <div class="row">
+<?php 
+ 
+     $data = $dbObject->read_services("SELECT * FROM `services`");
+     for ($i=0; $i < count($data) ; $i++) {    
+       
+      ?>
    <div class="col-sm-4">
         <div class="row">
             <div class="col-6">
-                <div class="card border-0" style="width:100%;">
+                <div class="card border-0 mb-1" style="width:100%;">
                     <div class="card-body">
-                        <h5 class="card-title" style="width:100%;"><b>HAIR DYE</b></h5>
-                        <p class="card-text" style="width:100%;">KSH 2000</p>
+                        <h5 class="card-title" style="width:100%;"><b><?php echo $data[$i]["service_name"]?></b></h5>
+                        <p class="card-text" style="width:100%;">KSH <?php echo $data[$i]["price"]?></p>
                         <a href="#" class="btn btn-primary">Book Now</a>
                     </div>
                 </div>
             </div>
             <div class="col-6">
-                <img src="" style="width:100%;">
+                <img src="<?php echo $data[$i]["image"]?>" style="width:100%;">
             </div>
         </div>
    </div>
-   <div class="col-sm-4">
-        <div class="row">
-            <div class="col-6">
-                <div class="card border-0" style="width:100%;">
-                    <div class="card-body">
-                        <h5 class="card-title" style="width:100%;"><b>HAIR DYE</b></h5>
-                        <p class="card-text" style="width:100%;">KSH 2000</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <img src="" style="width:100%;">
-            </div>
-        </div>
-   </div>
-   <div class="col-sm-4">
-        <div class="row">
-            <div class="col-6">
-                <div class="card border-0" style="width:100%;">
-                    <div class="card-body">
-                        <h5 class="card-title" style="width:100%;"><b>HAIR DYE</b></h5>
-                        <p class="card-text" style="width:100%;">KSH 2000</p>
-                        <a href="#" class="btn btn-primary">Book Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <img src="" style="width:100%;">
-            </div>
-        </div>
-   </div>
+   <?php }
+     
+   ?>
+  
 </div>
