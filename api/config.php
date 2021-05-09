@@ -47,13 +47,13 @@ class Database {
         if($result){
             while($rows=$result->fetch_assoc()){
                 $salon[$i]["booking_id"] = $rows["booking_id"];
-                $salon[$i]["Location"] = $rows["Location"];
                 $salon[$i]["Service"] = $rows["Service"];
                 $salon[$i]["Specialist"] = $rows["Specialist"];
+                $salon[$i]["price"] = $rows["price"];
                 $salon[$i]["date"] = $rows["date"];  
                 $i++;              
             }
-           
+            return $salon;
         }
         else{
            echo "Not successful";
@@ -166,6 +166,16 @@ for($i=0;$i<sizeof($students);$i++){
 // send email
 mail($email,"CBiT Elearning Forgot Password",$msg);
 }*/
+public function ifLoggedInUser(){
+   
+   if(isset($_COOKIE["id_user"])){
+  
+}
+else{
+   header("location:signin.php");
+}
+
+}
 public function security($var){
           
    trim($var);
