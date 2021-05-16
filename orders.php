@@ -25,8 +25,8 @@
                 <td><?php echo $invoices[$i]["name"];?></td>
                 <td><?php echo $invoices[$i]["phone"];?></td>
                 <td><?php echo $invoices[$i]["email"];?></td>
-                 <td><?php echo $invoices[$i]["date"];?></td>
-                 <!-- <td><?php  if ($invoices[$i]["status"] == 0) {
+                <td><?php echo $invoices[$i]["date"];?></td>
+                <td><?php  if ($invoices[$i]["status"] == 0) {
                     echo "<div class='text-danger'>";
                     echo "NOT PROCESSED";
                     echo "</div>";
@@ -37,19 +37,18 @@
                      echo "</div>";
                    }
                   ;?></td>
-                 <td><a href="processReceipt.php?data=<?php
-                  echo $invoices[$i]["id"];?>&data1=<?php
-                  echo $invoices[$i]["invoiceId"];?>&data2=<?php echo $invoices[$i]["userId"];?>">
+                 <td><a href="order_details.php?data=<?php
+                  echo $invoices[$i]["service_id"];?>">
                     <?php  if ($invoices[$i]["status"] == 0) {?>
-                    <button class="btn btn-lg btn-secondary" style="margin-top: 2%;" type="submit"><small>Process Receipt</small></button>
+                    <button class="btn btn-lg btn-primary" style="margin-top: 2%;" type="submit"><small>Process Receipt</small></button>
                 <?php  }
                    else{?>
-                   <button class="btn btn-lg btn-secondary" style="margin-top: 2%;" type="submit" disabled><small>Already Processed</small></button>
+                   <button class="btn btn-lg btn-primary" style="margin-top: 2%;" type="submit" disabled><small>Already Processed</small></button>
                  <?php  }
                   ;?>
 
                   </a>
-        </td>-->
+        </td>
               </tr>
                <?php }
 

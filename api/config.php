@@ -51,7 +51,8 @@ class Database {
                 $salon[$i]["phone"] = $rows["phone"];
                 $salon[$i]["email"] = $rows["email"];
                 $salon[$i]["service_id"] = $rows["service_id"];
-                $salon[$i]["date"] = $rows["date"];  
+                $salon[$i]["date"] = $rows["date"];
+                $salon[$i]["status"] = $rows["status"];   
                 $i++;              
             }
             return $salon;
@@ -157,7 +158,7 @@ class Database {
           setcookie ("email", $_SESSION["email"], time() + (365*24*60*60*10));
           setcookie ("picture", $_SESSION["picture"], time() + (365*24*60*60*10));
          
-          header("location:elearning.php");
+          header("location:orders.php");
         
       
   }else{
