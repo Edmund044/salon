@@ -18,6 +18,8 @@ $dbObject = new Database;
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- CUSTOM STYLES-->
+<link rel="stylesheet" href="./assets/css/main.css" >
 <script src="./assets/js/book_now.js"></script>
 <script src="./assets/js/addCart.js"></script>
 <script src="./assets/js/addProduct.js"></script>
