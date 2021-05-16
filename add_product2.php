@@ -1,8 +1,6 @@
-<?php include 'components/navigation.php'?>
-<?php include 'components/addProduct.php'?>
-<?php include 'components/footer.php'?>
 <?php
-
+include './api/config.php';
+$dbObject = new Database;
   //media
   if(isset($_POST["submit"])){
     $filetmp=$_FILES["pic"]["tmp_name"];

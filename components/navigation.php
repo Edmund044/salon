@@ -20,6 +20,7 @@ $dbObject = new Database;
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="./assets/js/book_now.js"></script>
 <script src="./assets/js/addCart.js"></script>
+<script src="./assets/js/addProduct.js"></script>
 <script src="./assets/js/refreshCart.js"></script>
 <ul class="nav justify-content-end">
   <li class="nav-item">
