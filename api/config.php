@@ -47,9 +47,10 @@ class Database {
         if($result){
             while($rows=$result->fetch_assoc()){
                 $salon[$i]["booking_id"] = $rows["booking_id"];
-                $salon[$i]["Service"] = $rows["Service"];
-                $salon[$i]["Specialist"] = $rows["Specialist"];
-                $salon[$i]["price"] = $rows["price"];
+                $salon[$i]["name"] = $rows["name"];
+                $salon[$i]["phone"] = $rows["phone"];
+                $salon[$i]["email"] = $rows["email"];
+                $salon[$i]["service_id"] = $rows["service_id"];
                 $salon[$i]["date"] = $rows["date"];  
                 $i++;              
             }
@@ -58,6 +59,26 @@ class Database {
         else{
            echo "Not successful";
         }
+     }
+     public function read_salon_orders($sql){
+      $result = $this->connection->query($sql);
+      $salon = array();
+      $i = 0;
+      if($result){
+          while($rows=$result->fetch_assoc()){
+              $salon[$i]["orders_id"] = $rows["orders_id"];
+              $salon[$i]["user_id"] = $rows["user_id"];
+              $salon[$i]["service"] = $rows["service"];
+              $salon[$i]["specialist"] = $rows["specialist"];
+              $salon[$i]["price"] = $rows["price"];
+               
+              $i++;              
+          }
+          return $salon;
+      }
+      else{
+         echo "Not successful";
+      }
      }
      public function read_services($sql){
         $result = $this->connection->query($sql);

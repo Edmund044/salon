@@ -16,7 +16,7 @@ for ($i=0; $i < count($data) ; $i++) {
 }
 
 //$user = $_COOKIE['id_user'];
-$user = '1';
-$sql = "INSERT INTO `bookings`(`user_id`, `Service`, `Specialist`, `price`, `date`) VALUES ('$user','$service','$specialist','$price','$date')";
+ $user =  $_COOKIE['id'];
+$sql = "INSERT INTO `orders`(`user_id`, `service`, `specialist`, `price`) VALUES ('$user','$service','$specialist','$price')";
 $dbObject->insert($sql);
 ?>

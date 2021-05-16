@@ -10,13 +10,13 @@
   <!-- The slideshow -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="./assets/images/blacks-in-the-labor-force_cover.jpg" alt="Los Angeles"  style="width:100%;height:40rem;object-fit:cover;">
+      <img src="./assets/images/pexels-engin-akyurt-3065171.jpg" alt="Los Angeles"  style="width:100%;height:40rem;object-fit:cover;">
     </div>
     <div class="carousel-item">
-      <img src="./assets/images/blacks-in-the-labor-force_cover.jpg" alt="Chicago"  style="width:100%;height:40rem;object-fit:cover;">
+      <img src="./assets/images/pexels-engin-akyurt-3065170.jpg" alt="Chicago"  style="width:100%;height:40rem;object-fit:cover;">
     </div>
     <div class="carousel-item">
-      <img src="./assets/images/blacks-in-the-labor-force_cover.jpg" alt="New York"  style="width:100%;height:40rem;object-fit:cover;">
+      <img src="./assets/images/pexels-cottonbro-3993449.jpg" alt="New York"  style="width:100%;height:40rem;object-fit:cover;">
     </div>
   </div>
 

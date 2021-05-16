@@ -26,7 +26,7 @@ $dbObject = new Database;
     <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="cart.php">CART  <span class="badge bg-primary rounded-pill text-white" id="cart"> </span></a>
+    <a class="nav-link" href="cart.php">ORDERS  <span class="badge bg-primary rounded-pill text-white" id="cart3"> </span></a>
   </li>
  
 </ul>
