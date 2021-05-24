@@ -81,6 +81,10 @@
                   <h6 class="my-0"><?php echo $data[$i]["service"]?></h6>
                   <small class="text-muted"><?php echo $data[$i]["specialist"]?></small>
                 </div>
+               <div>
+                  <p class="text-primary" style="cursor:pointer" onclick="deleteCart(<?php echo $data[$i]['orders_id']?>)" >Delete</p>
+               </div>
+
                 <span class="text-muted">KSH <?php echo $data[$i]["price"]?></span>
               </li>
                 

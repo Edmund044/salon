@@ -9,5 +9,9 @@ function add(id){
       $.post("book.php",{id:$id},function(data, status){
     alert("Your Save is: " + data );});
   
-  
+    $.get("cartCount.php" ,function(data) {
+      $("#cart").html(data);
+      $("#cart2").html(data);
+    
+    });
   }

@@ -24,6 +24,7 @@ $dbObject = new Database;
 <script src="./assets/js/addCart.js"></script>
 <script src="./assets/js/addProduct.js"></script>
 <script src="./assets/js/refreshCart.js"></script>
+<script src="./assets/js/deleteCart.js"></script>
 <ul class="nav justify-content-end">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
