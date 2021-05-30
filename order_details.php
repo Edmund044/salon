@@ -47,8 +47,45 @@
            <!-- <input type="text" class="form-control" placeholder="Promo code">
             <button type="submit" class="btn btn-secondary">Redeem</button>
           </div>-->
-          <button class="w-40 btn btn-primary btn-lg my-2" type="submit" onclick="addCart()">Checkout Client</button>
-       
+          
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+  <button class="w-40 btn btn-primary btn-lg my-2" type="submit" onClick="makePayment()">Checkout Client</button> 
+
+
+<script>
+  function makePayment() {
+    FlutterwaveCheckout({
+      public_key: "FLWPUBK-b08ca01d2ae0322c3c9f2f3cbf4b0318-X",
+      tx_ref: "RX1",
+      amount:<?php echo $price;?>,
+      currency: "KES",
+      country: "KE",
+      payment_options: " ",
+      redirect_url: // specified redirect URL
+        "https://callbacks.piedpiper.com/flutterwave.aspx?ismobile=34",
+      meta: {
+        consumer_id: 23,
+        consumer_mac: "92a3-912ba-1192a",
+      },
+      customer: {
+        email: "cornelius@gmail.com",
+        phone_number: "08102909304",
+        name: "Flutterwave Developers",
+      },
+      callback: function (data) {
+        console.log(data);
+      },
+      onclose: function() {
+        // close modal
+      },
+      customizations: {
+        title: "THREE SISTERS SALON AND SPA",
+        description: "Payment for services in cart",
+        logo: "https://assets.piedpiper.com/logo.png",
+      },
+    });
+  }
+</script>
       </div>
     </div>
   
