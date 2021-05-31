@@ -74,7 +74,7 @@
         <ul class="list-group mb-3">
                       <?php 
               $price = 0;
-              $data = $dbObject->read_salon_orders("SELECT * FROM `orders`");
+              $data = $dbObject->read_salon_orders("SELECT * FROM `orders` WHERE `status` = '0'");
               for ($i=0; $i < count($data) ; $i++) {?> 
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>

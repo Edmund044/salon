@@ -21,6 +21,7 @@ $dbObject = new Database;
 <script src="./assets/js/book_now.js"></script>
 <script src="./assets/js/addCart.js"></script>
 <script src="./assets/js/refreshCart.js"></script>
+<script src="./assets/js/checkout.js"></script>
 <ul class="nav justify-content-end">
   <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="index.php">HOME</a>

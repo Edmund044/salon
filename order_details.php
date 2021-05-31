@@ -47,10 +47,10 @@
            <!-- <input type="text" class="form-control" placeholder="Promo code">
             <button type="submit" class="btn btn-secondary">Redeem</button>
           </div>-->
-          
-  <script src="https://checkout.flutterwave.com/v3.js"></script>
-  <button class="w-40 btn btn-primary btn-lg my-2" type="submit" onClick="makePayment()">Checkout Client</button> 
-
+          <button class="w-40 btn btn-primary btn-lg my-2" type="submit" onClick="checkout(<?php echo $_GET['data'];?>)">Checkout Client</button> 
+ <!-- <script src="https://checkout.flutterwave.com/v3.js"></script>
+  <button class="w-40 btn btn-primary btn-lg my-2" type="submit" onClick="checkout(<?php echo $_GET['data'];?>)">Checkout Client</button> 
+-->
 
 <script>
   function makePayment() {
