@@ -110,7 +110,7 @@
            <!-- <input type="text" class="form-control" placeholder="Promo code">
             <button type="submit" class="btn btn-secondary">Redeem</button>
           </div>-->
-          <button class="w-100 btn btn-primary btn-lg my-2"  onclick="addCart()">Book Appointment</button>
+          <button class="w-100 btn btn-primary text-light btn-lg my-2"  onclick="addCart()">Book Appointment</button>
         </form>
       </div>
     </div>

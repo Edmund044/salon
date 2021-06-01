@@ -7,6 +7,6 @@ function addCart(){
     
       $.post("cart2.php",{name:$name,number:$number,email:$email,date:$date},function(data, status){
     alert("Your Save is: " + data );});
-    Location.reload(true);
+    window.location.replace("index.php");
   
   }

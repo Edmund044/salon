@@ -9,5 +9,5 @@ function deleteCart(id){
         $("#cart2").html(data);
         $("#cart3").html(data);
       });
-      Location.reload(true);
+      window.location.replace("");
   }
