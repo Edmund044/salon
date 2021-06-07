@@ -7,5 +7,5 @@
       $("#cart3").html(data);
     
     });
-    window.location.replace("");
+    
   });

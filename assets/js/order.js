@@ -15,6 +15,6 @@ function sendMessage(){
    //alert("Your Save is: " + data );
    console.log(data);
   });
-  window.location.replace("");
+
    
   }
